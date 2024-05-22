@@ -39,8 +39,8 @@
   align-items: center;
   justify-content: flex-end;
   gap: 64px;
-
   list-style: none;
+  transition: all 250ms ease-out;
 }
 
 .header__menu li {
