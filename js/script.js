@@ -1,66 +1,19 @@
-// import images as relative image path won't work with vite/vercel.
-import check from "../assets/check.svg";
-import star from "../assets/star.svg";
-import sushi12 from "../assets/sushi-12.png";
-import sushi11 from "../assets/sushi-11.png";
-import sushi10 from "../assets/sushi-10.png";
-
-import AOS from "aos";
-import "aos/dist/aos.css";
-
+import {
+  loadFoodsInPopularFoodSection,
+  loadTrendingDrinks,
+  loadTrendingSushis,
+} from "./loadFoods.js";
+import { foods } from "./foodsArray.js";
 let btnMenu = document.querySelector("#btnMenu");
 let menu = document.querySelector(".header__menu");
-
 let menuItems = document.querySelectorAll(".header__menu li");
 
-// init AOS animation
-AOS.init({
-  duration: 1000,
-  offset: 100,
-});
+// Inicializar foods
+loadFoodsInPopularFoodSection();
+loadTrendingSushis();
+loadTrendingDrinks();
 
-const trendingSushis = [
-  "Make Sushi",
-  "Nigiri Sushi",
-  "Oshizushi",
-  "Temaki Sushi",
-  "Uramaki Sushi",
-  "Inari Sushi",
-];
-
-const trendingDrinks = [
-  "Oruncha",
-  "Ofukucha",
-  "Sakura Tea",
-  "Kombu-cha",
-  "Aojiru",
-  "Mugicha",
-];
-
-const cards = [
-  {
-    imgSrc: sushi12,
-    alt: "sushi-12",
-    title: "Chezu Sushi",
-    rating: "4.8",
-    price: "$21.00",
-  },
-  {
-    imgSrc: sushi11,
-    alt: "sushi-11",
-    title: "Originale Sushi",
-    rating: "4.8",
-    price: "$21.00",
-    active: true,
-  },
-  {
-    imgSrc: sushi10,
-    alt: "sushi-10",
-    title: "Ramen Legendo",
-    rating: "4.8",
-    price: "$21.00",
-  },
-];
+let foodCards = document.querySelectorAll(".popular-foods__card");
 
 // Añade el evento resize para cerrar el menú cuando se cambie el tamaño de la ventana
 // Menu desplegable
@@ -88,3 +41,41 @@ menuItems.forEach((item) => {
 });
 
 /* Popular Food */
+let popularFoodFilter = document.querySelectorAll(".popular-foods__filter-btn");
+
+function activeFood(popularFoodFilter, foodSelected) {
+  let foodSelectedText = foodSelected.innerText;
+
+  /* Limpia todos los botones activos en el filter */
+  popularFoodFilter.forEach((food) => {
+    food.classList.remove("active");
+  });
+
+  /* Activa los botones que se seleccionaron */
+  foodSelected.classList.add("active");
+
+  /* Limpiar todas las cards activas */
+  foodCards.forEach((foodCard) => {
+    foodCard.classList.remove("active-card");
+  });
+
+  /* Activa las cards que corresponden al boton seleccionado */
+  foods.forEach((food) => {
+    if (food.category === foodSelectedText) {
+      foodCards.forEach((foodCard) => {
+        // Seleccionamos el h4 dentro del foodCard
+        const h4Element = foodCard.querySelector("h4");
+
+        if (food.title === h4Element.innerText) {
+          foodCard.classList.add("active-card");
+        }
+      });
+    }
+  });
+}
+
+popularFoodFilter.forEach((food) => {
+  food.addEventListener("click", () => {
+    activeFood(popularFoodFilter, food);
+  });
+});
