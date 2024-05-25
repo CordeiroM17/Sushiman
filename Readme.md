@@ -1,6 +1,7 @@
 # Sushiman 🍣
 
-Welcome to **Sushiman**, a delightful web page dedicated to showcasing the beauty of sushi and japanese food. This project was inspired by a YouTube video and I created during my first year as a developer.
+Welcome to **Sushiman**, a website dedicated to showcasing the beauty and flavours of sushi and Japanese cuisine. This project was inspired by a YouTube video and was created during my first year as a developer. Sushiman features beautiful images, brief descriptions of various sushi dishes, and an easy-to-navigate design. Dive into the world of sushi and discover the what's behind each roll.
+
 
 ## Table of Contents
 - [Demo](#demo)
@@ -11,7 +12,8 @@ Welcome to **Sushiman**, a delightful web page dedicated to showcasing the beaut
 - [Credits](#credits)
 
 ## Demo
-You can check out the live demo of the project [here](https://sushiman-f8rx.onrender.com). The page was deployed on Render hosting
+Experience the flavours of our sushi by clicking the link below to explore the full functionality and design of the website: [here](https://sushiman-f8rx.onrender.com).
+
 
 ## Features
 - **Responsive Design**: Optimized for various screen sizes.
@@ -51,10 +53,10 @@ To run this project locally, follow these steps:
 
 ## Usage
 Simply navigate through the page to explore different sections:
-- **Home**: Introduction to Sushiman.
-- **About us**: Learn more about the project and inspiration.
-- **Popular food and services**: Browse various sushi types.
-- **Contact**: Reach out using the contact form.
+- **Home**: An introduction to Sushiman, showcasing the artistry and flavors of Japanese cuisine.
+- **About us**: Learn more about the inspiration behind Sushiman and the journey of creating this project.
+- **Popular food and services**: Browse a variety of sushi types and explore our services.
+- **Contact**:  Reach out to us using the contact form for inquiries, reservations, or feedback.
 
 ## Credits
 This project was inspired by a tutorial from [YouTube](https://www.youtube.com/watch?v=QRrPE9aj3wI). Special thanks to the original content creator for the inspiration and guidance.
